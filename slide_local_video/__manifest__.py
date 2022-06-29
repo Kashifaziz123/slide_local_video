@@ -15,6 +15,7 @@
     'category': 'Uncategorized',
     'version': '0.1',
     'license': 'AGPL-3',
+    'images': ['static/description/images/cover_image.png'],
     # any module necessary for this one to work correctly
     'depends': ['base', 'website_slides'],
 
