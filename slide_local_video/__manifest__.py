@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 {
     'name': "Slide Local Video",
-
+ 'summary': """
+        E-learning local video play 
+        """,
     'description': """
         Alhadi Tech comes with a handy feature to upload any local video on eLearning slides as well as online video url of youtube, google drive or anyother 3rd party cloud public url.
     """,
