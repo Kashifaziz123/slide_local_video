@@ -316,19 +316,8 @@ class slideCustom(models.Model):
             if record.datas and record.slide_type in ['video']:
                 # record.embed_code = '<video width="%s" height="%s" autoplay="" controls=""><source src="%s" type="video/mp4"/></video>' % (
                 #     320, 240, "data:video/webm;base64," + str(record.datas).replace('b','').replace("'",''))
-                ir_attachment_id = self.env['ir.attachment'].search([('res_model', '=', 'slide.slide'), ('res_field', '=', 'datas'), ('res_id', '=', record.id)])
-                if ir_attachment_id.id and ir_attachment_id.url:
-                    # record.embed_code = '<iframe t-att-src="%s" class="o_wslides_iframe_viewer" allowFullScreen="true" height="%s" width="%s" frameborder="0"></iframe>' % (
-                    #     ir_attachment_id.url, 315, 420)
-                    record.embed_code = '<video width="%s" height="%s" autoplay="" controls=""><source src="%s" type="video/mp4"/></video>' % (
-                        320, 240, ir_attachment_id.url)
-                else:
-                    record.embed_code = '<iframe t-att-src="%s" class="o_wslides_iframe_viewer" allowFullScreen="true" height="%s" width="%s" frameborder="0"></iframe>' % (
-                    "data:video/webm;base64," + str(record.datas).replace('b','').replace("'",''), 315, 420)
-            elif record.datas and (not record.document_id or record.slide_type in ['document', 'presentation']):
-                slide_url = base_url + url_for('/slides/embed/%s?page=1' % record.id)
-                record.embed_code = '<iframe src="%s" class="o_wslides_iframe_viewer" allowFullScreen="true" height="%s" width="%s" frameborder="0"></iframe>' % (
-                slide_url, 315, 420)
+                record.embed_code = '<video width="%s" height="%s" autoplay="" controls=""><source src="%s" type="video/mp4"/></video>' % (
+                    320, 240, "/web/content/slide.slide/" + str(record.id) + "/datas")
             elif record.slide_type in ['video', 'url'] and record.document_id:
                 if not record.mime_type:
                     # embed youtube video
