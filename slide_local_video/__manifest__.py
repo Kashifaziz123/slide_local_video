@@ -20,10 +20,14 @@
     'images': ['static/description/images/cover_image.png'],
     # any module necessary for this one to work correctly
     'depends': ['base', 'website_slides'],
-
+    'assets': {
+        'web.assets_frontend': [
+            'slide_local_video/static/src/js/fullscreen.js',
+        ],
+    },
     # always loaded
     'data': [
-        'views/assets.xml',
+        # 'views/assets.xml',
         'views/custom_slides_view.xml',
         'views/website_slides.xml',
     ],

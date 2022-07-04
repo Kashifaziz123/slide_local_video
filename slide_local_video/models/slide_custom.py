@@ -316,7 +316,7 @@ class slideCustom(models.Model):
             if record.datas and record.slide_type in ['video']:
                 # record.embed_code = '<video width="%s" height="%s" autoplay="" controls=""><source src="%s" type="video/mp4"/></video>' % (
                 #     320, 240, "data:video/webm;base64," + str(record.datas).replace('b','').replace("'",''))
-                ir_attachment_id = self.env['ir.attachment'].search([('res_model', '=', 'slide.slide'), ('res_field', '=', 'datas'), ('res_id', '=', record.id)])
+                # ir_attachment_id = self.env['ir.attachment'].search([('res_model', '=', 'slide.slide'), ('res_field', '=', 'datas'), ('res_id', '=', record.id)])
                 record.embed_code = '<video width="%s" height="%s" autoplay="" controls=""><source src="%s" type="video/mp4"/></video>' % (
                     320, 240, "/web/content/slide.slide/" + str(record.id) + "/datas")
             elif record.datas and (not record.document_id or record.slide_type in ['document', 'presentation']):
