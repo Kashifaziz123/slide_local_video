@@ -7,14 +7,9 @@
     'description': """
         Alhadi Tech comes with a handy feature to upload any local video on eLearning slides as well as online video url of youtube, google drive or anyother 3rd party cloud public url.
     """,
-
     'author': "Alhaditech",
     'website': "https://www.alhaditech.com/",
-
-    # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/14.0/odoo/addons/base/data/ir_module_category_data.xml
-    # for the full list
-    'category': 'Uncategorized',
+    'category': 'Website/eLearning',
     'version': '0.1',
     'license': 'AGPL-3',
     'images': ['static/description/images/cover_image.png'],
